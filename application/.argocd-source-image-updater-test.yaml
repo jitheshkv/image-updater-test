@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - gcr.io/gcp-poc-321808/tokko-certifier:develop-cijob-77-commit-2409a9a
