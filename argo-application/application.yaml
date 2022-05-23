@@ -4,9 +4,10 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: image-updater-test=gcr.io/gcp-poc-321808/image-updater-test
     argocd-image-updater.argoproj.io/image-updater-test.update-strategy: latest
-    argocd-image-updater.argoproj.io/image-updater-test.allow-tags: regexp:*
+    argocd-image-updater.argoproj.io/image-updater-test.allow-tags: regexp:^test*
+     argocd-image-updater.argoproj.io/write-back-method: git:secret:argo-ns/github-repo-creds
   name: image-updater-test
-  namespace: argocd
+  namespace: argo-ns
 spec:
   project: default
   source:
