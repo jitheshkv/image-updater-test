@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - gcr.io/gcp-poc-321808/image-updater-test:test2

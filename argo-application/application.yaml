@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: image-updater-test=gcr.io/gcp-poc-321808/tokko-certifier
+    argocd-image-updater.argoproj.io/image-list: image-updater-test=gcr.io/beecash-staging/tokko-certifier
     argocd-image-updater.argoproj.io/image-updater-test.update-strategy: latest
     # argocd-image-updater.argoproj.io/image-updater-test.allow-tags: regexp:^test*
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:argo-ns/github-repo-creds
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/github-repo-creds
   name: image-updater-test
-  namespace: argo-ns
+  namespace: argocd
 spec:
   project: default
   source:
