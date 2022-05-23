@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: image-updater-test=gcr.io/gcp-poc-321808/image-updater-test
+    argocd-image-updater.argoproj.io/image-updater-test.update-strategy: latest
+    argocd-image-updater.argoproj.io/image-updater-test.allow-tags: regexp:*
+  name: image-updater-test
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/jitheshkv/image-updater-test
+    targetRevision: master
+    path: application/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

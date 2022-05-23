@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-updater-test-deployment
+spec:
+  selector:
+    matchLabels:
+      app: image-updater-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: image-updater-test
+    spec:
+      containers:
+      - name: image-updater-test
+        image: gcr.io/gcp-poc-321808/image-updater-test:GCR_TAG
+        ports:
+        - containerPort: 80
