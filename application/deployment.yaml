@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: image-updater-test
-        image: gcr.io/beecash-staging/tokko-certifier:GCR_TAG
+        image: gcr.io/beecash-prod/tokko-api:GCR_TAG
         ports:
         - containerPort: 80

@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - gcr.io/beecash-staging/tokko-certifier:develop-cijob-77-commit-2409a9a
