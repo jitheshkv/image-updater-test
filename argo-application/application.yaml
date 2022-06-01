@@ -7,7 +7,7 @@ metadata:
     # argocd-image-updater.argoproj.io/image-updater-test.allow-tags: regexp:^test*
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/github-repo-creds
   name: image-updater-test
-  namespace: argocd
+  namespace: argo-ns
 spec:
   project: default
   source:
